@@ -524,6 +524,7 @@ with tabs[1]:
     
     if venta_anticipada:
         resultados_dict.update({
+            "CETES": "Simulación Venta Anticipada",
             "Precio de Venta": f"${precio_venta_cetes:,.8f}",
             "Ganancia de Venta": f"${ganancia_venta_cetes:,.8f}",
             "Interés Bruto (Anticipado)": f"${interes_bruto_cetes_anticipado:,.8f}",
