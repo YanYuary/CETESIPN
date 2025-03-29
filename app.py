@@ -49,14 +49,14 @@ with tabs[0]:
         "Este instrumento permite a los inversionistas obtener rendimientos en un plazo determinado, siendo una alternativa segura y respaldada por el gobierno."
     )
     st.markdown("---")
-
+    
     # 2. Valor Nominal
     st.header("2. Valor Nominal 💵")
     st.markdown("**Concepto:** Es el valor que se recibirá al vencimiento del título.")
     st.markdown("**Fórmula:**")
     st.latex(r"\text{Valor Nominal} = 10 \text{ MXN}")
     st.markdown("---")
-
+    
     # 3. Precio de Compra
     st.header("3. Precio de Compra 🛒")
     st.markdown("**Concepto:** Precio al que se adquiere el CETE, obtenido al descontar el valor nominal mediante la tasa de descuento aplicada durante el plazo de la inversión.")
@@ -66,35 +66,35 @@ with tabs[0]:
         st.markdown("Con un valor nominal de **$10 MXN**, una tasa de descuento de **9.02%** y un plazo de **28 días**:")
         st.latex(r"\text{Precio de Compra} = 10 \times \left(1 - \frac{0.0902}{360} \times 28\right) \approx 9.92984 \text{ MXN}")
     st.markdown("---")
-
+    
     # 4. Remanente
     st.header("4. Remanente 💰")
     st.markdown("**Concepto:** Capital no utilizado en la compra de títulos enteros, que se devuelve al inversor.")
     st.markdown("**Fórmula:**")
     st.latex(r"\text{Remanente} = \text{Monto a Invertir} - \left(\text{Número de Títulos} \times \text{Precio de Compra}\right)")
     st.markdown("---")
-
+    
     # 5. Interés Bruto
     st.header("5. Interés Bruto 📈")
     st.markdown("**Concepto:** Ganancia total sin deducción de impuestos, calculada como la diferencia entre el valor nominal y el precio de compra, multiplicada por el número de títulos adquiridos.")
     st.markdown("**Fórmula:**")
     st.latex(r"\text{Interés Bruto} = \text{Número de Títulos} \times \left(\text{Valor Nominal} - \text{Precio de Compra}\right)")
     st.markdown("---")
-
+    
     # 6. ISR (Impuesto Sobre la Renta)
     st.header("6. ISR (Impuesto Sobre la Renta) 💸")
     st.markdown("**Concepto:** Porcentaje que se retiene sobre el interés bruto como impuesto, reduciendo la ganancia final del inversor.")
     st.markdown("**Fórmula:**")
     st.latex(r"\text{ISR} = \text{Interés Bruto} \times \frac{\text{Tasa de ISR}}{100}")
     st.markdown("---")
-
+    
     # 7. Interés Neto
     st.header("7. Interés Neto 💵➡️💰")
     st.markdown("**Concepto:** Ganancia final después de deducir el ISR del interés bruto.")
     st.markdown("**Fórmula:**")
     st.latex(r"\text{Interés Neto} = \text{Interés Bruto} - \text{ISR}")
     st.markdown("---")
-
+    
     # 8. Rendimientos del periodo
     st.header("8. Rendimiento al Final del Periodo del Certificado del CETE 📆")
     st.markdown("**Concepto:** Indicador que mide la rentabilidad de la inversión durante el plazo del certificado.")
@@ -211,8 +211,8 @@ with tabs[0]:
     st.markdown("- Días = 139")
     with st.expander("Solución Ejercicio 1"):
         st.markdown("1. Calcular el factor de descuento:")
-        st.latex(r"\frac{0.0425}{360} \times 139 \approx 0.0163069")
-        st.markdown("2. Aplicar al valor nominal:")
+        st.latex(r"\text{Factor} = \frac{0.0425}{360} \times 139 \approx 0.0163069")
+        st.markdown("2. Calcular el precio de compra:")
         st.latex(r"\text{Precio} = 10 \times \left(1 - 0.0163069\right) \approx 10 \times 0.9836931 \approx 9.8369")
         st.markdown("**Resultado:** El precio de cada CETE es aproximadamente **$9.8369 MXN**.")
     
@@ -232,11 +232,13 @@ with tabs[0]:
     st.markdown("- VN = $1.00 MXN")
     st.markdown("- Precio = $0.984513 MXN")
     st.markdown("- Días = 49")
-    with st.expander("Solución Ejercicio 2"):
-        st.markdown("1. Calcular el descuento unitario:")
-        st.latex(r"1 - \frac{0.984513}{1.00} = 0.015487")
-        st.markdown("2. Convertir a tasa anualizada:")
-        st.latex(r"\text{TdD} = 0.015487 \times \frac{360}{49} \times 100\% \approx 11.36\%")
+    with st.expander("Solución Ejercicio 2 - Procedimiento Detallado"):
+        st.markdown("1. **Descuento Unitario:**")
+        st.latex(r"\text{Descuento Unitario} = 1 - \frac{0.984513}{1.00} = 0.015487")
+        st.markdown("2. **Factor de Anualización:** Se usa la base de 360 días, por lo que el factor es:")
+        st.latex(r"\frac{360}{49} \approx 7.3469")
+        st.markdown("3. **Tasa de Descuento Anualizada:**")
+        st.latex(r"\text{TdD} = 0.015487 \times 7.3469 \times 100\% \approx 11.36\%")
         st.markdown("**Resultado:** La tasa de descuento es aproximadamente **11.36% anual**.")
     
     st.markdown("---")
@@ -258,7 +260,7 @@ with tabs[0]:
     with st.expander("Solución Ejercicio 3"):
         st.markdown("1. Calcular el factor de descuento:")
         st.latex(r"\frac{0.0415}{360} \times 87 \approx 0.0100479")
-        st.markdown("2. Aplicar al valor nominal:")
+        st.markdown("2. Calcular el precio de compra:")
         st.latex(r"\text{Precio} = 10 \times \left(1 - 0.0100479\right) \approx 10 \times 0.9899521 \approx 9.8995")
         st.markdown("**Resultado:** El precio por cada CETE es aproximadamente **$9.8995 MXN**.")
     
@@ -278,11 +280,13 @@ with tabs[0]:
     st.markdown("- VN = $100 MXN")
     st.markdown("- Precio = $96.930556 MXN")
     st.markdown("- Días = 221")
-    with st.expander("Solución Ejercicio 4"):
-        st.markdown("1. Calcular el descuento unitario:")
-        st.latex(r"1 - \frac{96.930556}{100} = 0.03069444")
-        st.markdown("2. Convertir a tasa anualizada:")
-        st.latex(r"\text{TdD} = 0.03069444 \times \frac{360}{221} \times 100\% \approx 5.00\%")
+    with st.expander("Solución Ejercicio 4 - Procedimiento Detallado"):
+        st.markdown("1. **Descuento Unitario:**")
+        st.latex(r"\text{Descuento Unitario} = 1 - \frac{96.930556}{100} = 0.03069444")
+        st.markdown("2. **Factor de Anualización:**")
+        st.latex(r"\frac{360}{221} \approx 1.6294")
+        st.markdown("3. **Tasa de Descuento Anualizada:**")
+        st.latex(r"\text{TdD} = 0.03069444 \times 1.6294 \times 100\% \approx 5.00\%")
         st.markdown("**Resultado:** La tasa de descuento es aproximadamente **5.00% anual**.")
     
     st.markdown("---")
@@ -299,27 +303,32 @@ with tabs[1]:
     st.title("💰 Simulador de Inversión en CETES 💰")
     st.markdown("🚀 Ajusta los parámetros a continuación y observa los resultados de tu inversión en CETES. ¡Diviértete y aprende! 😎")
     st.markdown("---")
-
+    
     st.header("📊 Parámetros de la Inversión 📊")
-
+    
     # MONTO A INVERTIR
     monto_total = st.number_input(
         "Monto Total a Invertir (MXN) 💵",
         min_value=1000.0, value=400000.0, step=500.0,
         help="Ingresa el monto total que deseas invertir en CETES."
     )
-
+    
+    # Precio Nominal del CETE (slider para seleccionar de 1 a 200)
+    VN_CETES = st.slider(
+        "Precio Nominal del CETE (MXN) 💲",
+        min_value=1.0, max_value=200.0, value=10.0, step=1.0,
+        help="Selecciona el valor nominal de cada CETE."
+    )
+    
     # PLAZO
     monto_cetes = monto_total
-    dias = st.slider(
+    dias_validos = [28, 91, 182, 365]
+    dias = st.select_slider(
         "Plazo de Inversión (días) ⏱️",
-        min_value=28,
-        max_value=365,
-        value=28,  # Valor inicial
-        step=1,
-        help="Selecciona el plazo de tu inversión entre 28 y 365 días."
+        options=dias_validos,
+        help="Selecciona el plazo de tu inversión: 28, 91, 182 o 364 días."
     )
-
+    
     # TASA DE DESCUENTO
     tdd_percent = st.number_input(
         "Tasa de Descuento (%) 📉",
@@ -327,7 +336,7 @@ with tabs[1]:
         help="Ingresa la tasa anualizada de descuento para CETES con máxima precisión."
     )
     tdd = tdd_percent / 100.0
-
+    
     # ISR E INFLACIÓN
     st.subheader("🔹 Parámetros Fiscales y Económicos 🔹")
     inflacion = st.number_input(
@@ -335,29 +344,29 @@ with tabs[1]:
         min_value=0.0, max_value=20.0, value=3.77, step=0.00000001, format="%.8f",
         help="Ejemplo: 3.77% medido el 28/03/2025"
     )
-
+    
     isr_percent = st.number_input(
         "Tasa de ISR Aplicada (%) 💸",
         min_value=0.0, max_value=16.0, value=5.0, step=0.00000001, format="%.8f",
         help="Ingresa la tasa de retención del ISR que se aplicará sobre el rendimiento obtenido."
     )
-
+    
     # --- Parámetros para Venta Anticipada ---
     venta_anticipada = st.checkbox(
         "Simular Venta Anticipada (Antes del Vencimiento) ⏳",
         help="Activa esta opción para simular la venta del CETE antes de su vencimiento."
     )
-
+    
     if venta_anticipada:
         dias_transcurridos = st.number_input(
             "Días Transcurridos (antes de la venta) 🕒",
-            min_value=1, max_value=dias-1, value=27, step=1,
+            min_value=1, max_value=dias-1, value=35, step=1,
             help="Ingresa el número de días transcurridos antes de realizar la venta anticipada."
         )
         dias_restantes = dias - dias_transcurridos
         tdd_actual_percent = st.number_input(
             "Tasa de CETES Actual para Venta (%) 🔄",
-            min_value=0.1, max_value=30.0, value=9.002000, step=0.00000001, format="%.8f",
+            min_value=0.1, max_value=30.0, value=tdd_percent, step=0.00000001, format="%.8f",
             help="Ingresa la tasa de descuento vigente para el CETE en el momento de la venta."
         )
         tdd_actual = tdd_actual_percent / 100.0
@@ -365,42 +374,39 @@ with tabs[1]:
         dias_transcurridos = None
         dias_restantes = None
         tdd_actual = None
-
+    
     # --- CÁLCULOS DE RENDIMIENTOS, TASAS E INTERESES ---
     st.markdown("---")
     st.header("💰 Resultados de la Inversión 💰")
-
-    # Valor Nominal del CETE
-    VN_CETES = 10.0
-
+    
     # Precio de compra calculado con la tasa de descuento original
     precio_cetes = VN_CETES * (1 - (tdd / 360) * dias)
-
+    
     # Número de títulos comprados (solo se adquieren títulos enteros)
     titulos_cetes = math.floor(monto_cetes / precio_cetes)
     inversion_cetes = titulos_cetes * precio_cetes
     remanente_cetes = monto_cetes - inversion_cetes
-
+    
     # Interés Bruto del periodo completo
     interes_bruto_cetes = titulos_cetes * (VN_CETES - precio_cetes)
     isr_cetes = interes_bruto_cetes * (isr_percent / 100.0)
     interes_neto_cetes = interes_bruto_cetes - isr_cetes
-
+    
     # Rendimientos del CETE (Periodo Completo)
     rendimiento_nominal_cetes = ((VN_CETES / precio_cetes) - 1) * 100 if inversion_cetes > 0 else 0
     rendimiento_neto_cetes = rendimiento_nominal_cetes * (1 - isr_percent / 100.0) if inversion_cetes > 0 else 0
     rendimiento_real_cetes = ((1 + rendimiento_neto_cetes/100) / (1 + inflacion/100) - 1) * 100
-
+    
     # Rendimientos Anualizados
     rendimiento_nominal_cetes_anual = ((1 + (rendimiento_nominal_cetes / 100)) ** (360 / dias) - 1) * 100 if inversion_cetes > 0 else 0
     rendimiento_neto_cetes_anual = rendimiento_nominal_cetes_anual * (1 - isr_percent / 100.0) if inversion_cetes > 0 else 0
     rendimiento_real_cetes_anual = ((1 + rendimiento_neto_cetes_anual/100) / (1 + inflacion/100) - 1) * 100
-
+    
     # Utilidades Totales
     utilidad_bruta = monto_cetes + interes_bruto_cetes
     principal = utilidad_bruta - isr_cetes
     utilidad_neta = principal - monto_cetes
-
+    
     # --- Cálculos para Venta Anticipada ---
     if venta_anticipada:
         precio_venta_cetes = VN_CETES * (1 - (tdd_actual / 360) * dias_restantes)
@@ -408,21 +414,21 @@ with tabs[1]:
         interes_bruto_cetes_anticipado = titulos_cetes * ganancia_venta_cetes
         isr_cetes_anticipado = interes_bruto_cetes_anticipado * (isr_percent / 100.0)
         interes_neto_cetes_anticipado = interes_bruto_cetes_anticipado - isr_cetes_anticipado
-
+        
         # Rendimiento del periodo en venta anticipada
         tasa_rendimiento_venta_periodo = (ganancia_venta_cetes / precio_cetes) * 100
         tasa_rendimiento_neta_periodo = tasa_rendimiento_venta_periodo * (1 - isr_percent / 100.0)
         tasa_rendimiento_real_periodo = ((1 + tasa_rendimiento_neta_periodo/100) / (1 + inflacion/100) - 1) * 100
-
+        
         # Rendimiento anualizado en venta anticipada (usando días transcurridos)
         tasa_rendimiento_venta = (ganancia_venta_cetes * 360 / (precio_cetes * dias_transcurridos)) * 100
         tasa_rendimiento_neta = tasa_rendimiento_venta * (1 - isr_percent / 100.0)
         tasa_rendimiento_real = ((1 + tasa_rendimiento_neta/100) / (1 + inflacion/100) - 1) * 100
-
+        
         utilidad_bruta_anticipado = monto_cetes + interes_bruto_cetes_anticipado
         principal_anticipado = utilidad_bruta_anticipado - isr_cetes_anticipado
         utilidad_neta_anticipado = principal_anticipado - monto_cetes
-
+    
     # --- MOSTRAR RESULTADOS ---
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -432,24 +438,24 @@ with tabs[1]:
         st.metric("Capital Invertido", f"${inversion_cetes:,.2f} MXN", help="Monto utilizado en la compra de CETES.")
         st.metric("Títulos Comprados", f"{titulos_cetes:,d}", help="Cantidad de títulos adquiridos (títulos enteros).")
         st.metric("Remanente", f"${remanente_cetes:,.2f} MXN", help="Capital no invertido en títulos.")
-
+    
         st.markdown("**Rendimientos Anualizados:**")
         st.metric("Rendimiento Nominal", f"{rendimiento_nominal_cetes_anual:.8f}%", help="Rendimiento anualizado sin aplicar ISR.")
         st.metric("Rendimiento Neto", f"{rendimiento_neto_cetes_anual:.8f}%", help="Rendimiento anualizado después de ISR.")
         st.metric("Rendimiento Real", f"{rendimiento_real_cetes_anual:.8f}%", help="Rendimiento anualizado ajustado por ISR e inflación.")
-
+    
         st.markdown("**Rendimientos del Periodo:**")
         st.metric("Rendimiento Nominal", f"{rendimiento_nominal_cetes:.8f}%", help="Rendimiento obtenido durante el periodo sin impuestos.")
         st.metric("Rendimiento Neto", f"{rendimiento_neto_cetes:.8f}%", help="Rendimiento obtenido durante el periodo después de ISR.")
         st.metric("Rendimiento Real", f"{rendimiento_real_cetes:.8f}%", help="Rendimiento obtenido durante el periodo ajustado por inflación.")
-
+    
         st.markdown("**Interés y Utilidad:**")
         st.metric("Interés Bruto", f"${interes_bruto_cetes:,.2f} MXN", help="Ganancia total sin ISR.")
         st.metric("ISR", f"${isr_cetes:,.2f} MXN", help="Impuesto aplicado al interés bruto.")
         st.metric("Interés Neto", f"${interes_neto_cetes:,.2f} MXN", help="Ganancia después de ISR.")
-        st.metric("Utilidad Bruta", f"${utilidad_bruta:,.2f} MXN", help="Suma del capital invertido y el interés bruto.")
-        st.metric("Utilidad Real (Principal)", f"${principal:,.2f} MXN", help="Utilidad bruta menos ISR y el capital invertido.")
-
+        st.metric("Utilidad Bruta", f"${utilidad_bruta:,.8f} MXN", help="Suma del capital invertido y el interés bruto.")
+        st.metric("Utilidad Real (Principal)", f"${principal:,.8f} MXN", help="Utilidad bruta menos ISR y el capital invertido.")
+    
     with col2:
         if venta_anticipada:
             st.markdown("#### Venta Anticipada")
@@ -458,33 +464,33 @@ with tabs[1]:
             st.metric("Capital Invertido", f"${inversion_cetes:,.2f} MXN", help="Monto invertido en CETES.")
             st.metric("Títulos Comprados", f"{titulos_cetes:,d}", help="Número de títulos adquiridos.")
             st.metric("Remanente", f"${remanente_cetes:,.2f} MXN", help="Capital no invertido en títulos.")
-
+    
             st.markdown("**Rendimientos Anualizados (Venta Anticipada):**")
             st.metric("Rendimiento Nominal", f"{tasa_rendimiento_venta:.8f}%", help="Rendimiento anualizado sin ISR ni inflación.")
             st.metric("Rendimiento Neto", f"{tasa_rendimiento_neta:.8f}%", help="Rendimiento anualizado después de ISR.")
             st.metric("Rendimiento Real", f"{tasa_rendimiento_real:.8f}%", help="Rendimiento anualizado ajustado por ISR e inflación.")
-
+    
             st.markdown("**Rendimientos del Periodo (Venta Anticipada):**")
             st.metric("Rendimiento Nominal", f"{tasa_rendimiento_venta_periodo:.8f}%", help="Rendimiento del periodo sin ISR.")
             st.metric("Rendimiento Neto", f"{tasa_rendimiento_neta_periodo:.8f}%", help="Rendimiento del periodo después de ISR.")
             st.metric("Rendimiento Real", f"{tasa_rendimiento_real_periodo:.8f}%", help="Rendimiento del periodo ajustado por inflación.")
-
+    
             st.markdown("**Interés y Utilidad (Venta Anticipada):**")
             st.metric("Interés Bruto", f"${interes_bruto_cetes_anticipado:,.2f} MXN", help="Ganancia total en venta anticipada sin ISR.")
             st.metric("ISR", f"${isr_cetes_anticipado:,.2f} MXN", help="Impuesto aplicado en venta anticipada.")
             st.metric("Interés Neto", f"${interes_neto_cetes_anticipado:,.2f} MXN", help="Ganancia en venta anticipada después de ISR.")
-            st.metric("Utilidad Bruta", f"${utilidad_bruta_anticipado:,.2f} MXN", help="Capital invertido más el interés bruto en venta anticipada.")
-            st.metric("Utilidad Real (Principal)", f"${principal_anticipado:,.2f} MXN", help="Utilidad bruta menos ISR y el capital invertido en venta anticipada.")
+            st.metric("Utilidad Bruta", f"${utilidad_bruta_anticipado:,.8f} MXN", help="Capital invertido más el interés bruto en venta anticipada.")
+            st.metric("Utilidad Real (Principal)", f"${principal_anticipado:,.8f} MXN", help="Utilidad bruta menos ISR y el capital invertido en venta anticipada.")
         else:
             st.info("Activa la opción de **'Venta Anticipada'** para ver estos resultados. 🤓")
-
+    
     with col3:
         if venta_anticipada:
             st.markdown("#### Ajuste por Venta Anticipada")
             st.metric("Precio de Compra (Tasa Original)", f"${precio_cetes:,.8f} MXN", help="Precio calculado con la tasa de descuento original.")
             st.metric("Precio de Venta (Tasa Actual)", f"${precio_venta_cetes:,.8f} MXN", help="Precio calculado con la tasa de descuento actual.")
             st.metric("Ganancia por Venta", f"${ganancia_venta_cetes:,.8f} MXN", help="Diferencia entre el precio de venta y el de compra.")
-
+    
     st.markdown("---")
     st.header("Exportar Resultados 📄")
     # Crear diccionario con los principales resultados a exportar
@@ -510,7 +516,7 @@ with tabs[1]:
         "Utilidad Bruta": f"${utilidad_bruta:,.8f}",
         "Utilidad Real": f"${principal:,.8f}",
     }
-
+    
     pdf_bytes = generar_pdf(resultados_dict)
     st.download_button(
         label="Descargar PDF con Resultados 📥",
@@ -518,7 +524,7 @@ with tabs[1]:
         file_name="simulacion_inversion.pdf",
         mime="application/pdf"
     )
-
+    
 # ================================
 # Pie de Página
 # ================================
