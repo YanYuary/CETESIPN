@@ -322,11 +322,13 @@ with tabs[1]:
     
     # PLAZO
     monto_cetes = monto_total
-    dias_validos = [28, 91, 182, 365]
-    dias = st.select_slider(
+    dias = st.slider(
         "Plazo de Inversión (días) ⏱️",
-        options=dias_validos,
-        help="Selecciona el plazo de tu inversión: 28, 91, 182 o 364 días."
+        min_value=28,
+        max_value=365,
+        value=28,  # Valor inicial
+        step=1,
+        help="Selecciona el plazo de tu inversión entre 28 y 365 días."
     )
     
     # TASA DE DESCUENTO
