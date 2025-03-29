@@ -9,7 +9,7 @@ from fpdf import FPDF
 # Configuración de la Página
 # ============================
 st.set_page_config(
-    page_title="🚀 Simulador y Curso de CETES",
+    page_title="🚀 Simulador de Inversión en CETES 🚀",
     layout="wide",
     page_icon="💹"
 )
@@ -29,10 +29,12 @@ def generar_pdf(resultados: dict) -> bytes:
     # Retornamos el PDF como bytes
     return pdf.output(dest="S").encode("latin1")
 
+
+
 # ============================
 # Pestañas Principales
 # ============================
-tabs = st.tabs(["📚 Curso de CETES: Explicación Integral", "💰 Simulador de Inversión en CETES"])
+tabs = st.tabs(["📚 Mini Curso de CETES", "💰 Simulador de Inversión"])
 
 # ====================================================
 # Pestaña 1: Curso de CETES – Explicación Integral
@@ -184,6 +186,116 @@ with tabs[0]:
         st.markdown("Se calculan los rendimientos para el período transcurrido y se anualizan para poder comparar con otras inversiones.")
     st.markdown("---")
     
+
+
+
+
+
+
+
+
+    # Resolución de Ejercicios
+    st.header("Resolución de Ejercicios")
+    st.markdown("---")
+
+    st.subheader("Ejercicio 1")
+    st.markdown(
+        """
+        **Enunciado:**
+        El señor Juan quiere comprar unos CETES que tienen **139 días por vencer** y una **tasa de descuento del 4.25%**.
+        Calcular el precio de los CETES.
+        """
+    )
+    st.markdown("**Fórmula:**")
+    st.latex(r"\text{Precio} = VN \times \left(1 - \frac{\text{TdD}}{360} \times \text{días}\right)")
+    st.markdown("**Datos:**")
+    st.markdown("- VN = $10 MXN")
+    st.markdown("- TdD = 4.25% = 0.0425")
+    st.markdown("- Días = 139")
+    with st.expander("Solución Ejercicio 1"):
+        st.markdown("1. Calcular el descuento:")
+        st.latex(r"\text{Descuento} = \frac{0.0425}{360} \times 139 \approx 0.0163069")
+        st.markdown("2. Aplicar al valor nominal:")
+        st.latex(r"\text{Precio} = 10 \times \left(1 - 0.0163069\right) \approx 10 \times 0.9836931 \approx 9.8369")
+        st.markdown("**Resultado:** El precio de cada CETE es aproximadamente **$9.8369**.")
+
+    st.markdown("---")
+
+    st.subheader("Ejercicio 2")
+    st.markdown(
+        """
+        **Enunciado:**
+        La señora Carmen compró unos pagarés con rendimiento liquidable al vencimiento (PRLV) que tienen **49 días por vencer**, un valor nominal de **$1.00** y pagó **$0.984513** por cada uno.
+        Calcular la tasa de descuento.
+        """
+    )
+    st.markdown("**Fórmula:**")
+    st.latex(r"\text{TdD} = \left(1 - \frac{\text{Precio}}{VN}\right) \times \frac{360}{\text{días}} \times 100\%")
+    st.markdown("**Datos:**")
+    st.markdown("- VN = $1.00")
+    st.markdown("- Precio = $0.984513")
+    st.markdown("- Días = 49")
+    with st.expander("Solución Ejercicio 2"):
+        st.markdown("1. Calcular el descuento unitario:")
+        st.latex(r"1 - \frac{0.984513}{1.00} = 0.015487")
+        st.markdown("2. Convertir a tasa anualizada:")
+        st.latex(r"\text{TdD} = 0.015487 \times \frac{360}{49} \times 100\% \approx 11.36\%")
+        st.markdown("**Resultado:** La tasa de descuento es aproximadamente **11.36% anual**.")
+
+    st.markdown("---")
+
+    st.subheader("Ejercicio 3")
+    st.markdown(
+        """
+        **Enunciado:**
+        Juan compró CETES al banco con **87 días por vencer** y una **tasa de descuento del 4.15%**.
+        ¿Cuál es el precio que pagó Juan por cada título?
+        """
+    )
+    st.markdown("**Fórmula:**")
+    st.latex(r"\text{Precio} = VN \times \left(1 - \frac{\text{TdD}}{360} \times \text{días}\right)")
+    st.markdown("**Datos:**")
+    st.markdown("- VN = $10")
+    st.markdown("- TdD = 4.15% = 0.0415")
+    st.markdown("- Días = 87")
+    with st.expander("Solución Ejercicio 3"):
+        st.markdown("1. Calcular el descuento:")
+        st.latex(r"\text{Descuento} = \frac{0.0415}{360} \times 87 \approx 0.0100479")
+        st.markdown("2. Aplicar al valor nominal:")
+        st.latex(r"\text{Precio} = 10 \times (1 - 0.0100479) \approx 10 \times 0.9899521 \approx 9.8995")
+        st.markdown("**Resultado:** El precio por cada CETE es aproximadamente **$9.8995**.")
+
+    st.markdown("---")
+
+    st.subheader("Ejercicio 4")
+    st.markdown(
+        """
+        **Enunciado:**
+        Un inversionista compró aceptaciones bancarias con un **valor nominal de $100**, **221 días por vencer**, pagando **$96.930556** por cada una.
+        Calcular la tasa de descuento aplicada.
+        """
+    )
+    st.markdown("**Fórmula:**")
+    st.latex(r"\text{TdD} = \left(1 - \frac{\text{Precio}}{VN}\right) \times \frac{360}{\text{días}} \times 100\%")
+    st.markdown("**Datos:**")
+    st.markdown("- VN = $100")
+    st.markdown("- Precio = $96.930556")
+    st.markdown("- Días = 221")
+    with st.expander("Solución Ejercicio 4"):
+        st.markdown("1. Calcular el descuento unitario:")
+        st.latex(r"1 - \frac{96.930556}{100} = 0.03069444")
+        st.markdown("2. Convertir a tasa anualizada:")
+        st.latex(r"\text{TdD} = 0.03069444 \times \frac{360}{221} \times 100\% \approx 5.00\%")
+        st.markdown("**Resultado:** La tasa de descuento es aproximadamente **5.00% anual**.")
+
+    st.markdown("---")
+    st.markdown("**Comentarios Finales:**")
+    st.markdown("- En los Ejercicios 1 y 3 se aplicó correctamente la fórmula de precio, considerando un VN de $10 y una base de 360 días. ")
+    st.markdown("- En los Ejercicios 2 y 4 se despejó la tasa de descuento de forma precisa, destacando que el VN varía según el instrumento.")
+    st.markdown("- La base de 360 días es el estándar en cálculos financieros para estos instrumentos.")
+
+
+
 
 # ====================================================
 # Pestaña 2: Simulador de Inversión en CETES
