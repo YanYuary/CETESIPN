@@ -311,11 +311,13 @@ with tabs[1]:
 
     # PLAZO
     monto_cetes = monto_total
-    dias_validos = [28, 91, 182, 365]
-    dias = st.select_slider(
+    dias = st.slider(
         "Plazo de Inversión (días) ⏱️",
-        options=dias_validos,
-        help="Selecciona el plazo de tu inversión: 28, 91, 182 o 364 días."
+        min_value=28,
+        max_value=365,
+        value=28,  # Valor inicial
+        step=1,
+        help="Selecciona el plazo de tu inversión entre 28 y 365 días."
     )
 
     # TASA DE DESCUENTO
@@ -349,13 +351,13 @@ with tabs[1]:
     if venta_anticipada:
         dias_transcurridos = st.number_input(
             "Días Transcurridos (antes de la venta) 🕒",
-            min_value=1, max_value=dias-1, value=35, step=1,
+            min_value=1, max_value=dias-1, value=27, step=1,
             help="Ingresa el número de días transcurridos antes de realizar la venta anticipada."
         )
         dias_restantes = dias - dias_transcurridos
         tdd_actual_percent = st.number_input(
             "Tasa de CETES Actual para Venta (%) 🔄",
-            min_value=0.1, max_value=30.0, value=tdd_percent, step=0.00000001, format="%.8f",
+            min_value=0.1, max_value=30.0, value=9.002000, step=0.00000001, format="%.8f",
             help="Ingresa la tasa de descuento vigente para el CETE en el momento de la venta."
         )
         tdd_actual = tdd_actual_percent / 100.0
@@ -445,8 +447,8 @@ with tabs[1]:
         st.metric("Interés Bruto", f"${interes_bruto_cetes:,.2f} MXN", help="Ganancia total sin ISR.")
         st.metric("ISR", f"${isr_cetes:,.2f} MXN", help="Impuesto aplicado al interés bruto.")
         st.metric("Interés Neto", f"${interes_neto_cetes:,.2f} MXN", help="Ganancia después de ISR.")
-        st.metric("Utilidad Bruta", f"${utilidad_bruta:,.8f} MXN", help="Suma del capital invertido y el interés bruto.")
-        st.metric("Utilidad Real (Principal)", f"${principal:,.8f} MXN", help="Utilidad bruta menos ISR y el capital invertido.")
+        st.metric("Utilidad Bruta", f"${utilidad_bruta:,.2f} MXN", help="Suma del capital invertido y el interés bruto.")
+        st.metric("Utilidad Real (Principal)", f"${principal:,.2f} MXN", help="Utilidad bruta menos ISR y el capital invertido.")
 
     with col2:
         if venta_anticipada:
@@ -471,8 +473,8 @@ with tabs[1]:
             st.metric("Interés Bruto", f"${interes_bruto_cetes_anticipado:,.2f} MXN", help="Ganancia total en venta anticipada sin ISR.")
             st.metric("ISR", f"${isr_cetes_anticipado:,.2f} MXN", help="Impuesto aplicado en venta anticipada.")
             st.metric("Interés Neto", f"${interes_neto_cetes_anticipado:,.2f} MXN", help="Ganancia en venta anticipada después de ISR.")
-            st.metric("Utilidad Bruta", f"${utilidad_bruta_anticipado:,.8f} MXN", help="Capital invertido más el interés bruto en venta anticipada.")
-            st.metric("Utilidad Real (Principal)", f"${principal_anticipado:,.8f} MXN", help="Utilidad bruta menos ISR y el capital invertido en venta anticipada.")
+            st.metric("Utilidad Bruta", f"${utilidad_bruta_anticipado:,.2f} MXN", help="Capital invertido más el interés bruto en venta anticipada.")
+            st.metric("Utilidad Real (Principal)", f"${principal_anticipado:,.2f} MXN", help="Utilidad bruta menos ISR y el capital invertido en venta anticipada.")
         else:
             st.info("Activa la opción de **'Venta Anticipada'** para ver estos resultados. 🤓")
 
