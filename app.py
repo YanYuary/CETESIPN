@@ -494,6 +494,9 @@ with tabs[1]:
             st.metric("Ganancia por Venta", f"${ganancia_venta_cetes:,.8f} MXN", help="Diferencia entre el precio de venta y el de compra.")
     
     st.markdown("---")
+
+
+    st.markdown("---")
     st.header("Exportar Resultados 📄")
     # Crear diccionario con los principales resultados a exportar
     resultados_dict = {
@@ -519,6 +522,17 @@ with tabs[1]:
         "Utilidad Real": f"${principal:,.8f}",
     }
     
+    if venta_anticipada:
+        resultados_dict.update({
+            "Precio de Venta": f"${precio_venta_cetes:,.8f}",
+            "Ganancia de Venta": f"${ganancia_venta_cetes:,.8f}",
+            "Interés Bruto (Anticipado)": f"${interes_bruto_cetes_anticipado:,.8f}",
+            "ISR (Anticipado)": f"${isr_cetes_anticipado:,.8f}",
+            "Interés Neto (Anticipado)": f"${interes_neto_cetes_anticipado:,.8f}",
+            "Utilidad Bruta (Anticipada)": f"${utilidad_bruta_anticipado:,.8f}",
+            "Utilidad Real (Anticipada)": f"${principal_anticipado:,.8f}"
+        })
+    
     pdf_bytes = generar_pdf(resultados_dict)
     st.download_button(
         label="Descargar PDF con Resultados 📥",
@@ -526,7 +540,10 @@ with tabs[1]:
         file_name="simulacion_inversion.pdf",
         mime="application/pdf"
     )
-    
+
+
+
+
 # ================================
 # Pie de Página
 # ================================
