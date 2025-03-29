@@ -368,7 +368,7 @@ with tabs[1]:
         dias_restantes = dias - dias_transcurridos
         tdd_actual_percent = st.number_input(
             "Tasa de CETES Actual para Venta (%) 🔄",
-            min_value=0.1, max_value=30.0, value=tdd_percent, step=0.00000001, format="%.8f",
+            min_value=0.1, max_value=30.0, value=9.002000, step=0.00000001, format="%.8f",
             help="Ingresa la tasa de descuento vigente para el CETE en el momento de la venta."
         )
         tdd_actual = tdd_actual_percent / 100.0
