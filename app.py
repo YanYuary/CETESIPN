@@ -309,7 +309,7 @@ with tabs[1]:
     # MONTO A INVERTIR
     monto_total = st.number_input(
         "Monto Total a Invertir (MXN) 💵",
-        min_value=1000.0, value=400000.0, step=500.0,
+        min_value=1000.0, value=40000.0, step=500.0,
         help="Ingresa el monto total que deseas invertir en CETES."
     )
     
