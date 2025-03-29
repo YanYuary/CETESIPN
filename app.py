@@ -455,8 +455,8 @@ with tabs[1]:
         st.metric("Interés Bruto", f"${interes_bruto_cetes:,.2f} MXN", help="Ganancia total sin ISR.")
         st.metric("ISR", f"${isr_cetes:,.2f} MXN", help="Impuesto aplicado al interés bruto.")
         st.metric("Interés Neto", f"${interes_neto_cetes:,.2f} MXN", help="Ganancia después de ISR.")
-        st.metric("Utilidad Bruta", f"${utilidad_bruta:,.8f} MXN", help="Suma del capital invertido y el interés bruto.")
-        st.metric("Utilidad Real (Principal)", f"${principal:,.8f} MXN", help="Utilidad bruta menos ISR y el capital invertido.")
+        st.metric("Utilidad Bruta", f"${utilidad_bruta:,.2f} MXN", help="Suma del capital invertido y el interés bruto.")
+        st.metric("Utilidad Real (Principal)", f"${principal:,.2f} MXN", help="Utilidad bruta menos ISR y el capital invertido.")
     
     with col2:
         if venta_anticipada:
@@ -481,8 +481,8 @@ with tabs[1]:
             st.metric("Interés Bruto", f"${interes_bruto_cetes_anticipado:,.2f} MXN", help="Ganancia total en venta anticipada sin ISR.")
             st.metric("ISR", f"${isr_cetes_anticipado:,.2f} MXN", help="Impuesto aplicado en venta anticipada.")
             st.metric("Interés Neto", f"${interes_neto_cetes_anticipado:,.2f} MXN", help="Ganancia en venta anticipada después de ISR.")
-            st.metric("Utilidad Bruta", f"${utilidad_bruta_anticipado:,.8f} MXN", help="Capital invertido más el interés bruto en venta anticipada.")
-            st.metric("Utilidad Real (Principal)", f"${principal_anticipado:,.8f} MXN", help="Utilidad bruta menos ISR y el capital invertido en venta anticipada.")
+            st.metric("Utilidad Bruta", f"${utilidad_bruta_anticipado:,.2f} MXN", help="Capital invertido más el interés bruto en venta anticipada.")
+            st.metric("Utilidad Real (Principal)", f"${principal_anticipado:,.2f} MXN", help="Utilidad bruta menos ISR y el capital invertido en venta anticipada.")
         else:
             st.info("Activa la opción de **'Venta Anticipada'** para ver estos resultados. 🤓")
     
